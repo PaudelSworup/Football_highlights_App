@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&family=Sorts+Mill+Goudy:ital@0;1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+.navbar-style{
+    background-color: #0f2840!important;
+}
+
+
+.a-style{
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;;
+}
+
+.a-style:hover{
+    color: #fff;
+}
+
+.nav-link{
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px #fff;
+}
+
+
+.active{
+    border: 1px solid dodgerblue;
+    color: white;
+    border-radius: 4px;
+}
+
+.toggle_nav{
+    cursor: pointer;
+    display: none;
+}
+
+#bar{
+    color: #fff;
+}
+
+#bar,#cross{
+    font-size: 30px;
+    
+
+}
+
+.cross{
+    color: red;
+    cursor: pointer;
+    display: none;
+}
+
+.tit > p{
+    text-align: center;
+    color: #0f2840;
+}
+
+
+
+
+
+#italy,#france,#germany,#england,#spain,#europe{
+    display: none;
+}
+
+
+
+
+
+
+@media screen and (max-width:992px){
+    .toggle_nav{
+        cursor: pointer;
+        display: block;
+        z-index: 1;
+    }
+
+    #navToggle{
+       position: fixed;
+       width: 100vw;
+       top:0;
+       background-color: #0f2840;
+       left: 0;
+       height: 100vh;
+       transform-origin: left;
+       display: none;
+       transition: 3s ease-in;
+       margin-top: 60px;
+    }
+
+    #navToggle > ul > li{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        /* margin: 30px auto; */
+    }
+} 
+    
+
+
+/* navbar end here */
+
+.btn-classes{
+    display: flex;
+    gap:12px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.detail{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media(max-width:541px){
+    #btn23{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media(max-width:533px){
+    #btn23{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+@media(max-width:254px){
+    #btn23{
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+
+
