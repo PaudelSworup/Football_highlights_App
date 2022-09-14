@@ -11,7 +11,7 @@ const url = "https://free-football-soccer-videos.p.rapidapi.com/"
 async function getData(ID,val){
     const response = await fetch(url,options);
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     leagueID = document.getElementById(ID)
     switchButton(ID)
     data.map((getData=>{
@@ -23,7 +23,7 @@ async function getData(ID,val){
             month = month+1
             let year = nepaliDate.getFullYear()
             let day = nepaliDate.getDate()
-            console.log(title)
+            // console.log(title)
             leagueID.innerHTML = leagueID.innerHTML + `<div class="card shadow-lg m-3 mycard" id="cards">
             <div class="detail">
                 <div class="sides">
@@ -93,7 +93,7 @@ function serieA(){
 }
 
 function switchButton(id){
-    console.log(id)
+    // console.log(id)
     switch(id){
         case 'italy':
         italy.style.display = 'block'
