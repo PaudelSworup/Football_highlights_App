@@ -9,27 +9,21 @@ const options = {
 const url = "https://free-football-soccer-videos.p.rapidapi.com/"
 
 async function getData(ID,val){
-    leagueID = document.getElementById(ID)
-    switchButton(ID)
     const response = await fetch(url,options);
     const data = await response.json()
-    // console.log(data)
+    console.log(data)
+    leagueID = document.getElementById(ID)
+    switchButton(ID)
     data.map((getData=>{
         const{competition,date,embed,side1,side2,thumbnail,title,url,videos} = getData
         if(competition.id === val){
-            // console.log(competition.id)
-            // console.log(competition.name)
-            // console.log(title)
-            // console.log(date)
-            // console.log(side1)
-            // console.log(embed)
             let nepaliDate = new Date(date)
             let nepaliTime = nepaliDate.toLocaleString('en-US',{timeZone:"Asia/Kathmandu", timeStyle:"short"})
             let month =nepaliDate.getMonth()
             month = month+1
             let year = nepaliDate.getFullYear()
             let day = nepaliDate.getDate()
-            console.log(day)
+            console.log(title)
             leagueID.innerHTML = leagueID.innerHTML + `<div class="card shadow-lg m-3 mycard" id="cards">
             <div class="detail">
                 <div class="sides">
@@ -45,6 +39,8 @@ async function getData(ID,val){
         return
         } 
     }))
+    
+    
 }
 
 let bars = document.getElementById('bar')
@@ -101,56 +97,81 @@ function switchButton(id){
     switch(id){
         case 'italy':
         italy.style.display = 'block'
-        france.style.display = 'none'
-        england.style.display = 'none'
-        spain.style.display = 'none'
-        germany.style.display = 'none'
-        europe.style.display = 'none'
+        england.innerHTML = ""
+        spain.innerHTML = ""
+        germany.innerHTML = ""
+        europe.innerHTML = ""
+        france.innerHTML = ""
+        // england.style.display = 'none'
+        // spain.style.display = 'none'
+        // germany.style.display = 'none'
+        // europe.style.display = 'none'
+        // france.style.display = 'none'
+        
         break
 
         case 'france':
             france.style.display = 'block'
-            italy.style.display = 'none'
-            england.style.display = 'none'
-            spain.style.display = 'none'
-            germany.style.display = 'none'
-            europe.style.display = 'none'
+            england.innerHTML = ""
+            spain.innerHTML = ""
+            germany.innerHTML = ""
+            europe.innerHTML = ""
+            italy.innerHTML = ""
+            // italy.style.display = 'none'
+            // england.style.display = 'none'
+            // spain.style.display = 'none'
+            // germany.style.display = 'none'
+            // europe.style.display = 'none'
         break
 
         case 'spain':
             spain.style.display = 'block'
-            france.style.display = 'none'
-            england.style.display = 'none'
-            italy.style.display = 'none'
-            germany.style.display = 'none'
-            europe.style.display = 'none'
+            england.innerHTML = ""
+            france.innerHTML = ""
+            germany.innerHTML = ""
+            europe.innerHTML = ""
+            italy.innerHTML = ""
+            // england.style.display = 'none'
+            // italy.style.display = 'none'
+            // germany.style.display = 'none'
+            // europe.style.display = 'none'
         break
 
         case 'england':
             england.style.display = 'block'
-            france.style.display = 'none'
-            italy.style.display = 'none'
-            spain.style.display = 'none'
-            germany.style.display = 'none'
-            europe.style.display = 'none'
+            spain.innerHTML = ""
+            france.innerHTML = ""
+            germany.innerHTML = ""
+            europe.innerHTML = ""
+            italy.innerHTML = ""
+            // france.style.display = 'none'
+            // italy.style.display = 'none'
+            // spain.style.display = 'none'
+            // germany.style.display = 'none'
+            // europe.style.display = 'none'
         break
 
         case 'germany':
             germany.style.display = 'block'
-            france.style.display = 'none'
-            england.style.display = 'none'
-            spain.style.display = 'none'
-            italy.style.display = 'none'
-            europe.style.display = 'none'
+            spain.innerHTML = ""
+            france.innerHTML = ""
+            england.innerHTML = ""
+            europe.innerHTML = ""
+            italy.innerHTML = ""
+            // france.style.display = 'none'
+            // england.style.display = 'none'
+            // spain.style.display = 'none'
+            // italy.style.display = 'none'
+            // europe.style.display = 'none'
         break
 
         case 'europe':
             europe.style.display = 'block'
-            france.style.display = 'none'
-            england.style.display = 'none'
-            spain.style.display = 'none'
-            italy.style.display = 'none'
-            germany.style.display = 'none'
+            spain.innerHTML = ""
+            france.innerHTML = ""
+            england.innerHTML = ""
+            germany.innerHTML = ""
+            italy.innerHTML = ""
         break
 
         default:
