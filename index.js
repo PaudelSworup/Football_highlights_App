@@ -8,22 +8,22 @@ const options = {
 
 const url = "https://free-football-soccer-videos.p.rapidapi.com/"
 
-async function getData(ID,val){
+async function getData(ID,val,gs2,gs3,gs4,gs5,gs6,gs7,gs8){
     const response = await fetch(url,options);
     const data = await response.json()
-    // console.log(data)
+    console.log(data)
     leagueID = document.getElementById(ID)
     switchButton(ID)
     data.map((getData=>{
         const{competition,date,embed,side1,side2,thumbnail,title,url,videos} = getData
-        if(competition.id === val){
+        if(competition.id === val || competition.id===gs2 || competition.id===gs3 || competition.id===gs4 || competition.id===gs5 || competition.id===gs6 || competition.id===gs7 || competition.id===gs8 ){
             let nepaliDate = new Date(date)
             let nepaliTime = nepaliDate.toLocaleString('en-US',{timeZone:"Asia/Kathmandu", timeStyle:"short"})
             let month =nepaliDate.getMonth()
             month = month+1
             let year = nepaliDate.getFullYear()
             let day = nepaliDate.getDate()
-            // console.log(title)
+            
             leagueID.innerHTML = leagueID.innerHTML + `<div class="card shadow-lg m-3 mycard" id="cards">
             <div class="detail">
                 <div class="sides">
@@ -37,11 +37,12 @@ async function getData(ID,val){
             ${embed}    
         </div>`
         return
-        } 
-    }))
-    
-    
+        }
+    }))    
 }
+
+
+
 
 let bars = document.getElementById('bar')
 let cross = document.getElementById('cross')
